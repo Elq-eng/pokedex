@@ -13,7 +13,9 @@ router.post('/register',[
 .post('/login',[
   check('email','The email is required').isEmail(),
   check('password','The password is required').isLength( {min:6} )],controllers.userLogin)
-
+.get('/',( req,res )=> {
+  return res.json({ message:"Hola mundo"})
+})
 
 export default router;
 
